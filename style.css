@@ -1,0 +1,57 @@
+body{
+  margin:0;
+  font-family: Arial;
+  direction: rtl;
+  background: linear-gradient(120deg,#ff9a9e,#fad0c4);
+  overflow-x:hidden;
+}
+
+.creator{
+  padding:20px;
+}
+
+input, textarea{
+  width:100%;
+  padding:12px;
+  margin:8px 0;
+  border-radius:10px;
+  border:none;
+}
+
+button{
+  background:#ff4d6d;
+  color:white;
+  padding:15px;
+  width:100%;
+  border:none;
+  border-radius:20px;
+  font-size:18px;
+}
+
+.viewer{
+  text-align:center;
+  color:white;
+}
+
+.card{
+  margin-top:40px;
+  background:rgba(0,0,0,.4);
+  padding:20px;
+  border-radius:20px;
+}
+
+img.float{
+  width:120px;
+  animation: float 6s infinite;
+}
+
+@keyframes float{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-40px)}
+  100%{transform:translateY(0)}
+}
+
+video{
+  width:90%;
+  margin:20px auto;
+}

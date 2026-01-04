@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>💝 هديتك</title>
+<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body class="viewer">
+
+<div class="overlay"></div>
+
+<div class="card">
+  <h1 id="name"></h1>
+  <p id="msg"></p>
+</div>
+
+<div id="media"></div>
+
+<script>
+const p = new URLSearchParams(location.search);
+
+name.innerText = p.get("name");
+msg.innerText = p.get("msg");
+
+(p.get("imgs")||"").split("\n").forEach(i=>{
+ if(i) media.innerHTML += `<img src="${i}" class="float">`;
+});
+
+(p.get("vids")||"").split("\n").forEach(v=>{
+ if(v) media.innerHTML += `<video src="${v}" controls></video>`;
+});
+
+let songs = (p.get("songs")||"").split("\n");
+if(songs[0]){
+ media.innerHTML += `<audio src="${songs[0]}" autoplay loop controls></audio>`;
+}
+</script>
+
+</body>
+</html>

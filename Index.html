@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>💖 صممي هديتك</title>
+<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body class="creator">
+
+<h1>🎁 اعملي هدية</h1>
+
+<input id="name" placeholder="اسم الشخص">
+<textarea id="msg" placeholder="اكتبي رسالتك"></textarea>
+
+<textarea id="imgs" placeholder="لينكات الصور (كل لينك في سطر)"></textarea>
+<textarea id="vids" placeholder="لينكات الفيديو (كل لينك في سطر)"></textarea>
+<textarea id="songs" placeholder="لينكات الأغاني (كل لينك في سطر)"></textarea>
+
+<button onclick="make()">✨ إنشاء اللينك</button>
+
+<p id="out"></p>
+
+<script>
+function make(){
+  let q = `view.html?name=${encodeURIComponent(name.value)}
+&msg=${encodeURIComponent(msg.value)}
+&imgs=${encodeURIComponent(imgs.value)}
+&vids=${encodeURIComponent(vids.value)}
+&songs=${encodeURIComponent(songs.value)}`;
+
+  out.innerHTML = "🔗 انسخي اللينك ده:<br><br>" +
+  location.origin + "/birthday-site/" + q;
+}
+</script>
+
+</body>
+</html>
